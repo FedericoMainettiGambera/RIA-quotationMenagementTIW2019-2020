@@ -1,0 +1,443 @@
+/*debugging
+*{
+    border: 1px solid blueviolet
+}
+*/
+
+/*utility*/
+body{
+    font-family: 'Roboto', sans-serif;
+}
+.flexCenter{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*default*/
+html{
+    overflow: auto;
+}
+.leftHider{
+    position: fixed;
+    top:10%;
+    bottom:10%;
+    left: 0;
+    width:60%;
+    transition: 0.8s;
+    z-index: 100;
+    background-color: white;
+    border-right: 2px solid black;
+}
+.rightHider{
+    position: fixed;
+    bottom:10%;
+    top:10%;
+    right: 0;
+    width:40%;
+    transition: 0.8s;
+    z-index: 100;
+    background-color: white;
+    border-left: 2px solid black;
+}
+.topGradient{
+    position: fixed;
+    top: 10%;
+    height: 10%;
+    width: 60%;
+    background: linear-gradient(180deg, rgba(255,255,255,1) 00%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+.bottomGradient{
+    position: fixed;
+    bottom: 10%;
+    height: 10%;
+    width: 60%;
+    background: linear-gradient(0deg, rgba(255,255,255,1) 00%, rgba(255,255,255,1) 43%, rgba(255,255,255,0) 100%);
+    z-index: 1;
+}
+.main{
+    width: 60vw;
+    position: fixed;
+    bottom: 10vh;
+    top: 10vh;
+    left: 0;
+    overflow-y: auto;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+}
+/*Chrome, Safari and Opera */
+.main::-webkit-scrollbar {
+    display: none;
+}
+.mainContent{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: flex-end;
+}
+.spacer{
+    height: 7vh;
+    width: 100%;
+}
+.tab{
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    top: 0;
+    width: 40vw;
+    z-index: 3;
+}
+.tabContainer{
+    transition: 0.5s;
+    border-left: 3px solid black;
+    opacity: 1;
+    height: 80vh;
+    width: 100%;
+}
+.button{
+    background-color: white;
+    color: black;
+    padding: 1vh 1vw;
+    border: 2px solid black;
+    transition: 0.3s;
+}
+.button:hover{
+    background-color: black;
+    color: white;
+    padding: 1vh 2vw;
+}
+.button:focus{
+    background-color: black;
+    color: white;
+    padding: 1vh 2vw;
+}
+.button:active{
+    padding: 1vh 1.5vw;
+}
+.logOut{
+    position: fixed;
+    z-index: 50;
+    bottom: 10%;
+    right: 40%;
+}
+
+/*new quotation tab*/
+.NQlorem{
+    text-align: left;
+    padding: 5vh 9vh;
+}
+.NQtitle{
+    font-weight: bolder;
+}
+
+/*quotations*/
+.quotationsBanner{
+    position: fixed;
+    top: 10%;
+    right: 40%;
+    z-index: 10;    
+    background-color: black;
+    color: white;
+    padding: 1.5vh 1.5vw;
+}
+.quotationContainer{
+    display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: nowrap;
+    width: 80%;
+    min-height: 17vh;
+    transition: 0.3s;
+    padding-bottom: 2vh;
+}
+.quotationContainer:hover{
+    width: 100%;
+}
+.quotationImage{
+    width: 10%;
+    flex-grow: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.quotationImage>img{
+    max-width: 70%;
+    max-height: 70%;
+    display: block;
+}
+.quotationInfo{
+    width: 10%;
+    flex-grow: 3;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+    padding-right: 1vh;
+}
+.quotationName{
+    display: flex;
+    flex-flow: row-reverse;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    flex-grow: 1;
+    font-weight: bolder;
+    font-size: larger;
+    align-items: flex-end;
+    font-size: 1.8rem;
+}
+.options{
+    flex-grow: 2;
+    display: flex;
+    flex-flow: column;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: flex-end;
+}
+.optionLabel{
+    font-size: 2vh;
+    font-weight: bold;
+}
+.promotionDiv:hover .promotionText{
+    opacity: 100%;
+}
+.promotionOption{
+    padding-left: 5px;
+    border-left: 4px solid #03e00a;
+}
+.promotionText{
+    font-family: 'Roboto', sans-serif;
+    background-color: #03e00a;
+    color: white;
+    opacity: 0%;
+    transition: 0.5s;
+    padding-right: 10px;
+    padding-left: 5px;
+}
+.normalText{
+	display: none;
+}
+.price{
+    font-weight: bold;
+    padding-top: 3px;
+}
+
+
+/*options tab*/
+.productInfoContainer{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    width: 90%;
+}
+.noProductSelectedContainer{
+    background-color: black;
+    padding: 5% 4%;
+    border: 2px dotted black;
+}
+.Otitle{
+    font-weight: bolder;
+    background-color: black;
+    border-top: 1px solid black;
+}
+.Otitle>span{
+    padding: 0 3px;
+    border-left: 3vw solid black;
+    border-right: 3vw solid black;
+    background-color: white;
+}
+.productImageInOptionTab{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 80%;
+}
+.productImageInOptionTab>img{
+    max-width: 45%;
+    max-height: 45%;
+    display: block;
+}
+.prodNameInOptionTab{
+    font-weight: bolder;
+    padding: 1vh 0;
+}
+.lorem{
+    padding-right: 10%;
+}
+.option{
+    margin-right: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: 0.3s;
+}
+.option:hover{
+    margin-left: 1vw;
+}
+.optionSpan{
+    padding: 2px;
+    margin: 2px;
+    border: 1px solid black;
+    transition: 0.2s;
+    color: black;
+    background-color: white;
+}
+.optionSpan:hover{
+    padding: 2px 5px;
+    background-color: black;
+    color: white;
+}
+.selected{
+    transition: 0.2s;
+    background-color: greenyellow;
+    border: 0px solid black;
+}
+.createQuotation{
+    align-self: flex-start;
+    margin-left: 2vw;
+    margin-top: 1vh;
+}
+/*products*/
+.productsBanner{
+    position: fixed;
+    top: 10%;
+    right: 40%;
+    z-index: 10;    
+    background-color: black;
+    color: white;
+    padding: 1.5vh 1.5vw;
+}
+.productsContainer{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.productContainer{
+    width: 30%;
+    padding: 4% 0;
+    transition: 0.3s;
+    border: 0px solid black;
+}
+.productContainer:hover{
+    width: 37%;
+}
+.productImage{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.productImage>img{
+    max-width: 70%;
+    max-height: 70%;
+    display: block;
+}
+.chooseButton{
+    margin-top: 14%;
+    margin-bottom: 3%;
+    background-color: white;
+    color: black;
+    padding: 5% 5%;
+    border: 2px solid black;
+    transition: 0.3s;
+}
+.chooseButton:hover{
+    background-color: black;
+    color: white;
+    padding: 5% 10%;
+}
+.chooseButton:focus{
+    background-color: black;
+    color: white;
+    padding: 5% 10%;
+}
+.chooseButton:active{
+    padding: 5% 7%;
+}
+.backButton{
+    position: fixed;
+    top: 10%;
+    left: 10%;
+    z-index: 10;    
+    background-color: white;
+    color: black;
+    padding: 1vh 1vw;
+    transition: 0.3s;
+    border: 2px solid black;
+}
+.backButton:hover{
+    background-color: black;
+    color: white;
+    padding: 1vh 2vw;
+}
+.backButton:active{
+    padding: 1vh 1.8vw;
+}
+.quotationError{
+    color: red;
+    align-self: flex-start;
+    padding-left: 2vw;
+}
+
+/*error*/
+.errorBackground{
+    position: fixed;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+
+    background-color: #000000a1;
+    z-index: 1500;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.errorContainer{
+    padding: 5vh 5vw;
+    max-width: 90vw;
+    max-height: 90vh;
+    background-color: white;
+    color: black;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.error{
+    font-weight: bolder;
+    padding: 1vh 1vw;
+}
+.errorMessage{
+    color: red;
+}
+.errorOk{
+    padding: 0.8vh 1vw;
+    margin-top: 3vh;
+    background-color: white;
+    color: black;
+    transition: 0.3s;
+    border: 1px solid black;
+}
+.errorOk:hover{
+    background-color: black;
+    color: white;
+    padding: 1vh 1.5vw;
+}
+.errorOk:active{
+    padding: 0.9vh 1.2vw;
+}
+.errorNone{
+    visibility: hidden;
+}
+.errorVisible{
+    visibility: visible;
+}

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee Home Page</title>
+<link rel="stylesheet" type="text/css" href="./CSS/normalize.css">
+<link rel="stylesheet" type="text/css" href="./CSS/employee.css">
+<link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="logOut button"><i class="fa fa-sign-out"></i></div>
+    <div class="topGradient"></div>
+    <div class="bottomGradient"></div>
+    <div class="tab flexCenter">
+        <div class="tabContainer flexCenter">
+            <div class="banner">
+                <span class="bannerButton firstBanner selectedBanner">YOUR MANAGED QUOTATIONS</span>
+                <span class="bannerButton">MANAGE NEW QUOTATION</span>
+            </div>
+            
+            <!--CONTENT FILLER WHEN NO QUOTATION IS SELECTED
+            <div class="productInfoContainer">
+                <div>
+                    <span class="noQuotationSelected">CHOOSE A QUOTATION TO MANAGE</span>
+                </div>
+            </div>
+            -->
+
+            <!--MANAGE QUOTATION, partially stolen from ClientHome.html
+            <div class="productImageInOptionTab">
+                <img src="./Isocahedron.JPG">
+            </div>
+            <div class="productInfoContainer">
+                <div class="prodNameInOptionTab ">ISOCAHEDRON</div>
+                <div class="lorem">Cool 3D-shape. Really nice :)</div>
+            </div>
+            <div class="productInfoContainer">
+                <div class="prodNameInOptionTab ">OPTIONS:</div>
+                <div class="optionsContainer" >
+                    <div >promotions:</div>
+                    <div class="option"><span class="optionSpan">WOOD </span></div>
+                    <div class="option"><span class="optionSpan">GOLD</span></div>
+                    <div class="option"><span class="optionSpan">WIFI</span></div>
+                    <div class="option"><span class="optionSpan">BEST OPTION EVER</span></div>
+                    <br>
+                    <div >normals:</div>
+                    <div class="option"><span class="optionSpan">SOMETHING</span></div>
+                    <div class="option"><span class="optionSpan">COOL</span></div>
+                    <div class="option"><span class="optionSpan">BANANA</span></div>
+                    <div class="option"><span class="optionSpan">WEAPONIZED</span></div>
+                    <br>
+                </div>
+            </div>
+            <div class="productInfoContainer">
+                <div class="prodNameInOptionTab ">CLIENTS INFO:</div>
+                <div class="userName">Client's username: username</div>
+                <div class="mail">Client's email: fede@gmail.com</div>
+            </div>
+            <form action="/quotationMenagementTIW2019-2020/PriceQuotation/" method="post">
+                <div class="priceInputs">
+                    <input type="number" name="wholePart" id="wholePart" placeholder="00" min="0" required autofocus>
+                    <span class="dot">.</span>
+                    <input type="number" name="decimalPart" id="decimalPart" placeholder="00" min="0" max="99" 
+                        onchange="if(this.value.length > 2) {this.value = this.value.charAt(0) + this.value.charAt(1);}; if(this.value.length == 1){this.value = this.value + '0'};" required autofocus>
+                <input type="hidden" value="quotationIDGoesHERE" name="quotationID" id="quotationID" />
+                </div>
+                <div class="button createQuotation">PRICE</div>
+            </form>
+            -->
+        </div>
+    </div>
+    <div class="main">
+        <div class="flexCenter">
+            <div class="spacer"></div>
+                <div class="mainContent">
+                    <!-- EMPLOYEE's QUOTATIONS  (code taken from ClientHome.html)
+                    <div class="quotationContainer">
+                        <div class="quotationImage">
+                            <img src="/Image?productID=1">
+                        </div>
+                        <div class="quotationInfo">
+                            <div class="quotationName">
+                                product name
+                            </div>
+                            <div class="options"> 
+                                <div>
+                                    <span class="optionLabel">Options:</span>
+                                </div>
+                                <div class="promotionDiv"> 
+                                    <span class="promotionText">promotion</span>
+                                    <span class="promotionOption">Option name</span>
+                                </div>
+                                Price: 100.09
+                            </div>
+                        </div>
+                    </div>
+                    -->
+
+                    <!-- NOT MANAGED QUOTATIONS  (code taken from ClientHome.html)
+                    <div class="quotationContainer">
+                        <div class="quotationImage">
+                            <img src="/Image?productID=1">
+                        </div>
+                        <div class="quotationInfo">
+                            <div class="quotationName">
+                                product name
+                            </div>
+                            <div class="options"> 
+                                <div>
+                                    <span class="optionLabel">Options:</span>
+                                </div>
+                                <div class="promotionDiv"> 
+                                    <span class="promotionText">promotion</span>
+                                    <span class="promotionOption">Option name</span>
+                                </div>
+                                <div class="button">MANAGE</div>
+                            </div>
+                        </div>
+                    </div>
+                    -->
+                </div>
+            <div class="spacer"></div>
+            <div class="spacer"></div>            
+        </div>
+    </div>
+    <div class="errorBackground errorNone">
+        <div class="errorContainer">
+            <div class="error">ERROR</div>
+            <div class="errorMessage"></div>
+            <div class="errorOk">OK</div>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./JS/EmployeeHome/model.js"></script>
+<script type="text/javascript" src="./JS/EmployeeHome/orchestrator.js"></script>
+<script type="text/javascript" src="./JS/EmployeeHome/serverGate.js"></script>
+<script type="text/javascript" src="./JS/EmployeeHome/view.js"></script>
+<script type="text/javascript" src="./JS/EmployeeHome/main.js"></script>
+</html>

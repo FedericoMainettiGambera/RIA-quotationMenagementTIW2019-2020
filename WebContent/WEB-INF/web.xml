@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
+	<display-name>quotationMenagementTIW2019-2020</display-name>
+	<context-param>
+		<param-name>dbUrl</param-name>
+		<param-value>jdbc:mysql://localhost:3306/db_quotation_management</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dbUser</param-name>
+		<param-value>root</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dbPassword</param-name>
+		<param-value>Brosinarms2</param-value>
+	</context-param>
+	<context-param>
+		<param-name>dbDriver</param-name>
+		<param-value>com.mysql.cj.jdbc.Driver</param-value>
+	</context-param>
+	
+	
+	<filter>
+        <filter-name>LoginChecker</filter-name>
+        <filter-class>it.polimi.tiw.quotationsmenagment.filters.LoginChecker</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>LoginChecker</filter-name>
+        <url-pattern>/LogIn.html</url-pattern>
+		<url-pattern>/ClientHome.html</url-pattern>
+		<url-pattern>/EmployeeHome.html</url-pattern>
+		<url-pattern>/Image</url-pattern>
+		<url-pattern>/JS/ClientHome/*</url-pattern>
+		<url-pattern>/JS/EmployeeHome/*</url-pattern>
+		<url-pattern>/createQuotation</url-pattern>
+		<url-pattern>/getAllProducts</url-pattern>
+		<url-pattern>/getClientInfo</url-pattern>
+		<url-pattern>/getEmployeeInfo</url-pattern>
+		<url-pattern>/getManagedQuotations</url-pattern>
+		<url-pattern>/getNotManagedQuotations</url-pattern>
+		<url-pattern>/getQuotations</url-pattern>
+		<url-pattern>/priceQuotation</url-pattern>
+    </filter-mapping>
+	
+	<filter>
+        <filter-name>ClientRoleChecker</filter-name>
+        <filter-class>it.polimi.tiw.quotationsmenagment.filters.ClientRoleChecker</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>ClientRoleChecker</filter-name>
+        <url-pattern>/ClientHome.html</url-pattern>
+		<url-pattern>/JS/ClientHome/*</url-pattern>
+		<url-pattern>/createQuotation</url-pattern>
+		<url-pattern>/getAllProducts</url-pattern>
+		<url-pattern>/getClientInfo</url-pattern>
+		<url-pattern>/getQuotations</url-pattern>
+    </filter-mapping>
+
+	<filter>
+        <filter-name>EmployeeRoleChecker</filter-name>
+        <filter-class>it.polimi.tiw.quotationsmenagment.filters.EmployeeRoleChecker</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>EmployeeRoleChecker</filter-name>
+        <url-pattern>/EmployeeHome.html</url-pattern>
+		<url-pattern>/JS/EmployeeHome/*</url-pattern>
+		<url-pattern>/getEmployeeInfo</url-pattern>
+		<url-pattern>/getManagedQuotations</url-pattern>
+		<url-pattern>/getNotManagedQuotations</url-pattern>
+		<url-pattern>/priceQuotation</url-pattern>
+    </filter-mapping>
+	
+	<servlet>
+		<servlet-name>CheckLogin</servlet-name>
+		<servlet-class>it.polimi.tiw.quotationsmenagment.controllers.CheckLogin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>CheckLogin</servlet-name>
+		<url-pattern>/CheckLogin/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>SignUp</servlet-name>
+		<servlet-class>it.polimi.tiw.quotationsmenagment.controllers.SignUp</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>SignUp</servlet-name>
+		<url-pattern>/SignUp/*</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>LogIn.html</welcome-file>
+	</welcome-file-list>
+	
+</web-app>

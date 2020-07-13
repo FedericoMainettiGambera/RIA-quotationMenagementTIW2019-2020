@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Log In Page</title>
+<link rel="stylesheet" type="text/css" href="./CSS/normalize.css">
+<link rel="stylesheet" type="text/css" href="./CSS/login.css">
+<link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="right">
+        <div class="rightContent">
+            <div class="signInLabel">
+                SIGN IN HERE
+            </div>
+            <form id="signInForm" action="#">
+                <div class="formLabel">LOG INTO YOUR EXISTING ACCOUNT</div>
+                <div>
+                    <label for="username" class="inputLabel">Username</label><br>
+                    <input class="input" type="text" name="username" id="usernameSignIn" placeholder="username" required autocomplete>
+                </div>
+                <div>
+                    <label for="password" class="inputLabel">Password</label><br>
+                    <input class="input" type="password" name="password" id="passwordSignIn" placeholder="password" required autocomplete> 
+                </div>
+                <div>
+                    <input class="submit" id="signInButton" type="button" value="LOG IN">
+                </div>
+                <div>
+                    <span class="errorMessage" id="messageErrorSignIn"></span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="left">
+        <div class="leftContent">
+            <div class="coolCompanyNameContainer">
+                <span class="coolCompanyName" >COOL COMPANY NAME/LOGO</span>
+            </div>
+            <div class="loremContainer">
+                <span class="lorem">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis aliquid fuga repudiandae inventore natus reprehenderit, repellat, aliquam hic quasi esse earum nisi animi itaque suscipit maiores vel, saepe labore. Voluptatibus error hic quidem minima qui in dignissimos quibusdam, a debitis eum delectus inventore maiores? Aspernatur voluptates rerum distinctio dolores at?</span>
+            </div>
+            <form id="signUpForm" action="#">
+                <div class="signUpFormLabel" >REGISTER NOW TO START YOUR JOURNEY</div>
+                <div>    
+                    <label class="inputLabel" for="mail">email</label><br>
+                    <input class="input" type="email" name="email" id="email" placeholder="email@example.com" required autofocus>
+                </div>
+                <span class="errorMessage" id="mailError"></span>
+                <div>
+                    <label class="inputLabel" for="username">Username</label><br>
+                    <input class="input" type="text" name="username" id="username" placeholder="username" required>
+                </div>
+                <span class="errorMessage" id="usernameError"></span>
+                <div> 
+                    <label class="inputLabel" for="password">Password</label><br>
+                    <input class="input" type="password" name="password" id="password" placeholder="password" required>
+                </div>
+                <span class="errorMessage" id="passwordError"></span>
+                <div>
+                    <label class="inputLabel" for="repeatPassword">Repeat password</label><br>
+                    <input class="input" type="password" name="repeatPassword" id="repeatPassword" placeholder="password" required>
+                </div>
+                <span class="errorMessage" id="repeatPasswordError"></span>
+                <div>
+                    <input class="submit" id="signUpButton" type="button" value="SIGN UP">
+                </div>
+                <span class="errorMessage" id="messageError"></span>
+            </form>
+        </div>
+    </div>
+</body>
+<script type="text/javascript" src="./JS/utils.js"></script>
+<script type="text/javascript" src="./JS/Login/main.js"></script>
+</html>
