@@ -12,8 +12,9 @@ This project covers topics like:
 - Backend and frontend development;
 - pure HTML application
 - RIA (rich internet application)
-- authentication
+- authentication & sessions
 - TOMCAT
+- database (MySQL)
 
 and many more!
 
