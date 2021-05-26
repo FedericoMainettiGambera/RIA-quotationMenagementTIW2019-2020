@@ -13,7 +13,7 @@ This project covers topics like:
 - pure HTML application
 - RIA (rich internet application)
 - authentication & sessions
-- TOMCAT
+- Java and TOMCAT
 - database (MySQL)
 
 and many more!
